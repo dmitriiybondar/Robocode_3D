@@ -51,10 +51,8 @@
       <option name="PROGRAM_PARAMETERS" value="-projectPath D:\IT\Robocode\Unity\Robocode_3D -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\IT\Robocode\Unity\Robocode_3D" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
-      <option name="PTY_MODE" value="Auto" />
       <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2" />
     </configuration>
@@ -63,10 +61,8 @@
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\IT\Robocode\Unity\Robocode_3D -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\IT\Robocode\Unity\Robocode_3D" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
-      <option name="PTY_MODE" value="Auto" />
       <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2" />
     </configuration>
@@ -98,7 +94,7 @@
       <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Device" type="UnityDevicePlayer" factoryName="UnityAttachToDevicePlayer">
+    <configuration name="Attach to" type="UnityDevicePlayer" factoryName="UnityAttachToDevicePlayer">
       <method v="2" />
     </configuration>
   </component>
