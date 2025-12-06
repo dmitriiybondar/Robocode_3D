@@ -3,25 +3,29 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private float _angleY, _dirZ, _jumpForce = 6f, _turnSpeed = 200f;
+    private float _lastAttackTime;
     private bool _isGrounded;
+    private bool _isSwordEquipped;
+    private Vector3 _jumpDir, _localSwordPosition;
+    private Quaternion _localSwordRotation;
     private Rigidbody _rb;
     private Animator _animator;
-    private Vector3 _jumpDir;
-    
-    void Start()
+    [SerializeField] private GameObject sword;
+
+    private void Start()
     {
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         _angleY = Input.GetAxis("Mouse X") * _turnSpeed * Time.fixedDeltaTime;
         _dirZ = Input.GetAxis("Vertical");
         transform.Rotate(new Vector3(0f, _angleY, 0f));
     }
 
-    void Update()
+    private void Update()
     {
         if (_isGrounded)
         {
@@ -33,10 +37,30 @@ public class PlayerController : MonoBehaviour
             {
                 _animator.SetTrigger("isLanded");
             }
+            
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (!_isSwordEquipped)
+                {
+                    _animator.Play("Equip_Sword");
+                    _lastAttackTime = Time.time;
+                }
+                else
+                {
+                    Attack();
+                    _lastAttackTime = Time.time;
+                }
+            }
+
+            if (_isSwordEquipped && Time.time > _lastAttackTime + 5f)
+            {
+                _animator.Play("Holster_Sword");
+            }
 
             Move(_dirZ, "isWalkForward", "isWalkBack");
             Sprint();
             Dodge();
+
         }
         else
         {
@@ -66,7 +90,7 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool(altParametrName, false);
         }
     }
-    
+
     private void Jump()
     {
         _animator.Play("Sword_Jump_Platformer_Start");
@@ -101,6 +125,39 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKey(KeyCode.D))
         {
             _animator.Play("Sword_Dodge_Right");
+        }
+    }
+
+    private void Equip_Sword()
+    {
+        _localSwordPosition = sword.transform.localPosition;
+        _localSwordRotation = sword.transform.localRotation;
+        sword.transform.SetParent(GameObject.Find("RightHand").transform);
+        _isSwordEquipped = true;
+    }
+
+    private void Unequip_Sword()
+    {
+        sword.transform.SetParent(GameObject.Find("Hips").transform);
+        sword.transform.localPosition = _localSwordPosition;
+        sword.transform.localRotation = _localSwordRotation;
+        _isSwordEquipped = false;
+    }
+
+    private void Attack()
+    {
+        int rand = Random.Range(0, 3);
+        switch (rand)
+        {
+            case 0:
+                _animator.Play("Sword_Attack_1");
+                break;
+            case 1:
+                _animator.Play("Sword_Attack_2");
+                break;
+            case 2:
+                _animator.Play("Sword_Attack_3");
+                break;
         }
     }
 }
