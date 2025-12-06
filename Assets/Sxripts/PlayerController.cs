@@ -7,9 +7,10 @@ public class PlayerController : MonoBehaviour
 {
     private float _angleY, _dirZ, _jumpForce = 6f, _turnSpeed = 150f;
     private bool _isGrounded;
+    private Vector3 _jumpDir;
     private Rigidbody _rb;
     private Animator _animator;
-    private Vector3 _jumpDir;
+    [SerializeField] private GameObject sword;
     
     void Start()
     {
@@ -105,5 +106,10 @@ public class PlayerController : MonoBehaviour
         {
             _animator.Play("Sword_Dodge_Right");
         }
+    }
+    
+    private void EquiptSword()
+    {
+        sword.transform.SetParent(GameObject.Find("RightHand").transform);
     }
 }
