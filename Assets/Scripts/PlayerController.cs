@@ -132,13 +132,13 @@ public class PlayerController : MonoBehaviour
     {
         _localSwordPosition = sword.transform.localPosition;
         _localSwordRotation = sword.transform.localRotation;
-        sword.transform.SetParent(GameObject.Find("RightHand").transform);
+        sword.transform.SetParent(GameObject.Find("Root/Hips/Spine/Spine1/RightShoulder/RightArm/RightForeArm/RightHand").transform);
         _isSwordEquipped = true;
     }
 
     private void Unequip_Sword()
     {
-        sword.transform.SetParent(GameObject.Find("Hips").transform);
+        sword.transform.SetParent(GameObject.Find("Root/Hips").transform);
         sword.transform.localPosition = _localSwordPosition;
         sword.transform.localRotation = _localSwordRotation;
         _isSwordEquipped = false;
