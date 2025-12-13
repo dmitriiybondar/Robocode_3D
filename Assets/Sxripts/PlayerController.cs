@@ -1,17 +1,18 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     private float _angleY, _dirZ, _jumpForce = 6f, _turnSpeed = 150f;
+    private float _lastAttackTime; //Для автоматичного ховання меча через деякий час
     private bool _isGrounded;
+    private bool _isSwordEquipped;
     private Vector3 _jumpDir;
+    private Vector3 _localSwordPosition;
+    private Quaternion _localSwordRotation;
     private Rigidbody _rb;
     private Animator _animator;
     [SerializeField] private GameObject sword;
-    
+
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -38,6 +39,39 @@ public class PlayerController : MonoBehaviour
                 _animator.SetTrigger("isLanded");
             }
             
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E))
+            {
+                if (!_isSwordEquipped)
+                {
+                    _animator.Play("Equip_Sword");
+                    _lastAttackTime = Time.time; //Для автоматичного ховання меча через деякий час
+                }
+                else
+                {
+                    Attack();
+                    _lastAttackTime = Time.time; //Для автоматичного ховання меча через деякий час
+                }
+            }
+
+            //Автоматично сховати меч через 5 секунд
+            if (_isSwordEquipped && Time.time > _lastAttackTime + 5f)
+            {
+                _animator.Play("Holster_Sword");
+            }
+            
+            //Сховати меч при натисканні на колесико миші
+            if (_isSwordEquipped && Input.GetMouseButton(2))
+            {
+                _animator.Play("Holster_Sword");
+            }
+            
+            //Сховати меч при натисканні на кнопку клавіатури
+            if (_isSwordEquipped && Input.GetKeyDown(KeyCode.R))
+            {
+                _animator.Play("Holster_Sword");
+            }
+            
+
             Move(_dirZ, "isWalkForward", "isWalkBackward");
             Sprint();
             Dodge();
@@ -107,9 +141,25 @@ public class PlayerController : MonoBehaviour
             _animator.Play("Sword_Dodge_Right");
         }
     }
-    
+
     private void EquiptSword()
     {
+        _localSwordPosition = sword.transform.localPosition;
+        _localSwordRotation = sword.transform.localRotation;
         sword.transform.SetParent(GameObject.Find("RightHand").transform);
+        _isSwordEquipped = true;
+    }
+
+    private void UnequiptSword()
+    {
+        sword.transform.SetParent(GameObject.Find("Root/Hips").transform);
+        sword.transform.localPosition = _localSwordPosition;
+        sword.transform.localRotation = _localSwordRotation;
+        _isSwordEquipped = false;
+    }
+
+    private void Attack()
+    {
+        
     }
 }

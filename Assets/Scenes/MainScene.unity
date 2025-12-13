@@ -2553,6 +2553,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8868435264050537073, guid: 1d024e7c5e5c31a4ab17346e03f7f7a4, type: 3}
   m_PrefabInstance: {fileID: 1707144986}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1784463666 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1426601316116937876, guid: 6512e4df7ced578498949e5559005584, type: 3}
+  m_PrefabInstance: {fileID: 1383867710453984437}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1866752868
 GameObject:
   m_ObjectHideFlags: 0
@@ -2992,10 +2997,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1426601316116937876, guid: 6512e4df7ced578498949e5559005584, type: 3}
+      propertyPath: m_Name
+      value: Sword
+      objectReference: {fileID: 0}
     - target: {fileID: 5568809444558552383, guid: 6512e4df7ced578498949e5559005584, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7776433101512269812, guid: 6512e4df7ced578498949e5559005584, type: 3}
+      propertyPath: sword
+      value: 
+      objectReference: {fileID: 1784463666}
     - target: {fileID: 7829178420218926831, guid: 6512e4df7ced578498949e5559005584, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.611247
