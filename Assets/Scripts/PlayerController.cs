@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
-    private float _angleY, _dirZ, _jumpForce = 6f, _turnSpeed = 200f;
+    private float _angleY, _dirZ, _jumpForce = 6f, _turnSpeed = 70f;
     private float _lastAttackTime;
+    private int _countBalls;
     private bool _isGrounded;
     private bool _isSwordEquipped;
     private Vector3 _jumpDir, _localSwordPosition;
@@ -11,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _rb;
     private Animator _animator;
     [SerializeField] private GameObject sword;
+    [SerializeField] private Transform tree;
 
     private void Start()
     {
@@ -38,7 +42,7 @@ public class PlayerController : MonoBehaviour
                 _animator.SetTrigger("isLanded");
             }
             
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E))
             {
                 if (!_isSwordEquipped)
                 {
@@ -47,12 +51,15 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    Attack();
-                    _lastAttackTime = Time.time;
+                    if (Time.time > _lastAttackTime + 0.5f)
+                    {
+                        Attack();
+                        _lastAttackTime = Time.time;
+                    }
                 }
             }
 
-            if (_isSwordEquipped && Time.time > _lastAttackTime + 5f)
+            if (_isSwordEquipped && (Time.time > _lastAttackTime + 5f || Input.GetMouseButtonDown(2) || Input.GetKeyDown(KeyCode.R)))
             {
                 _animator.Play("Holster_Sword");
             }
@@ -132,13 +139,13 @@ public class PlayerController : MonoBehaviour
     {
         _localSwordPosition = sword.transform.localPosition;
         _localSwordRotation = sword.transform.localRotation;
-        sword.transform.SetParent(GameObject.Find("Root/Hips/Spine/Spine1/RightShoulder/RightArm/RightForeArm/RightHand").transform);
+        sword.transform.SetParent(GameObject.Find("Player/Root/Hips/Spine/Spine1/RightShoulder/RightArm/RightForeArm/RightHand").transform);
         _isSwordEquipped = true;
     }
 
     private void Unequip_Sword()
     {
-        sword.transform.SetParent(GameObject.Find("Root/Hips").transform);
+        sword.transform.SetParent(GameObject.Find("Player/Root/Hips").transform);
         sword.transform.localPosition = _localSwordPosition;
         sword.transform.localRotation = _localSwordRotation;
         _isSwordEquipped = false;
@@ -158,6 +165,17 @@ public class PlayerController : MonoBehaviour
             case 2:
                 _animator.Play("Sword_Attack_3");
                 break;
+        }
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.CompareTag("Bonus"))
+        {
+            Transform nextBall = tree.GetChild(_countBalls);
+            nextBall.gameObject.SetActive(true);
+            _countBalls++;
+            collision.gameObject.SetActive(false);
         }
     }
 }
