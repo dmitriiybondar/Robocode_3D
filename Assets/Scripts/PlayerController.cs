@@ -1,10 +1,9 @@
-using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
-    private float _angleY, _dirZ, _jumpForce = 6f, _turnSpeed = 70f;
+    private float _angleY, _dirZ, _jumpForce = 6f, _turnSpeed = 300f;
     private float _lastAttackTime;
     private int _countBalls;
     private bool _isGrounded;
