@@ -6,12 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f7e26bae-785c-4a79-be57-4a72b11aac3b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Robocode_3D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Robocode_3D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animators/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animators/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SwordShieldAnimsetPro/Animations/Equip_Sword.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SwordShieldAnimsetPro/Animations/Equip_Sword.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SwordShieldAnimsetPro/Animations/Holster_Sword.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SwordShieldAnimsetPro/Animations/Holster_Sword.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SwordShieldAnimsetPro/Animations/SwordShieldAnimsetPro_part2.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SwordShieldAnimsetPro/Animations/SwordShieldAnimsetPro_part2.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sxripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sxripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +23,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
   <component name="ProjectColorInfo">{
@@ -42,7 +45,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "Standalone Player.Start Unity.executor": "Run",
-    "git-widget-placeholder": "SB16",
+    "git-widget-placeholder": "minecraft",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -54,7 +57,7 @@
 }]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.6f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.62f3\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath D:\IT\Robocode\Unity\Robocode_3D -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\IT\Robocode\Unity\Robocode_3D" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -64,7 +67,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.6f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.62f3\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\IT\Robocode\Unity\Robocode_3D -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\IT\Robocode\Unity\Robocode_3D" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -117,6 +120,7 @@
       <workItem from="1764426676810" duration="4203000" />
       <workItem from="1765029955826" duration="1587000" />
       <workItem from="1765633166432" duration="6841000" />
+      <workItem from="1769262607887" duration="7015000" />
     </task>
     <servers />
   </component>
