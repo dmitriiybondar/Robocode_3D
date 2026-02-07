@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour
     private CharacterController _controller;
     [SerializeField] private Camera _camera;
     
+    [SerializeField] GameObject particleObject, tool;
+    private const float hitScaleSpeed = 15f;
+    private float hitLastTime = 0f;
+    
     
     void Start()
     {
