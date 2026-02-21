@@ -32,6 +32,18 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    private void ObjectInteraction(GameObject tempObject)
+    {
+        switch (tempObject.tag) 
+        {
+            case "Block":
+                Dig(tempObject.GetComponent<Block>());
+                break;
+            case "Enemy":
+                break;
+        }
+    }
     
     void Start()
     {
@@ -70,10 +82,19 @@ public class PlayerController : MonoBehaviour
         velocity.y = _verticalSpeed;
         _controller.Move(velocity * Time.deltaTime);
     }
-
+    
     void Update()
     {
         RotateCharacter();
         MoveCharacter();
-    }
+        RaycastHit hit;
+        if (Physics.Raycast(_camera.transform.position,
+                    _camera.transform.forward, out hit, 5f))
+        {
+            if (Input.GetMouseButton(0))
+            {
+                ObjectInteraction(hit.transform.gameObject);
+            }
+        }
+    }   
 }
