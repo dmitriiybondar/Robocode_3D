@@ -13,7 +13,25 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject particleObject, tool;
     private const float hitScaleSpeed = 15f;
     private float hitLastTime = 0f;
-    
+
+    private void Dig(Block block)
+    {
+        if (Time.time - hitLastTime > 1 / hitScaleSpeed)
+        {
+            tool.GetComponent<Animator>().SetTrigger("attack");
+            hitLastTime = Time.time;
+            block.health -= tool.GetComponent<Tool>().damageToBlock;
+            GameObject go = Instantiate(particleObject, 
+                                        block.gameObject.transform.position, 
+                                        Quaternion.identity);
+            go.GetComponent<ParticleSystemRenderer>().material =
+                block.gameObject.GetComponent<MeshRenderer>().material;
+            if (block.health <= 0)
+            {
+                block.DestroyBehaviour();
+            }
+        }
+    }
     
     void Start()
     {

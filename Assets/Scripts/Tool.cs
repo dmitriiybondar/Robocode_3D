@@ -12,7 +12,7 @@ public class Tool : MonoBehaviour
     void Start()
     {
         damageToEnemy = (int)type * (int)material;
-
+    
         switch (type)
         {
             case ToolTypes.PICKAXE:
