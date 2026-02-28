@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f7e26bae-785c-4a79-be57-4a72b11aac3b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Robocode_3D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Robocode_3D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Grass.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Grass.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ground.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Ground.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/pickaxe.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/pickaxe.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/eduScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/eduScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +20,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a91b96e490e84ba9954316d406612e69177000/f6/2b02b439/MonoBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Block.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Temp/Compiled-UI-Default.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tool.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -131,6 +128,7 @@
       <workItem from="1771079325452" duration="1075000" />
       <workItem from="1771080529018" duration="2909000" />
       <workItem from="1771681979973" duration="3542000" />
+      <workItem from="1772289925401" duration="1233000" />
     </task>
     <servers />
   </component>
