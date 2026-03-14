@@ -1,0 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Chest : MonoBehaviour
+{
+    public List<ItemData> chestItems = new List<ItemData>();
+    void Awake()
+    {
+        InventoryManager inventoryManager = GameObject.Find("InventoryManager").GetComponent<InventoryManager>();
+
+        int itemCounteinChest = Random.Range(3, 7);
+        for (int i = 0; i < itemCounteinChest; i++)
+        {
+            inventoryManager.CreateItem(Random.Range(0, inventoryManager.items.Length), chestItems);
+        }
+    }
+}

@@ -14,28 +14,30 @@ public class PlayerController : MonoBehaviour
     private const float hitScaleSpeed = 15f;
     private float hitLastTime = 0f;
 
+    private InventoryManager _inventoryManager;
+    public List<ItemData> inventoryItems, currentChestItems;
+    private Transform _itemParant;
+    private bool canMove = true;
+
     private void Dig(Block block)
     {
         if (Time.time - hitLastTime > 1 / hitScaleSpeed)
         {
-            tool.GetComponent<Animator>().SetTrigger("attack");
+            tool.GetComponent<Animator>().SetTrigger("Attack");
             hitLastTime = Time.time;
             block.health -= tool.GetComponent<Tool>().damageToBlock;
-            GameObject go = Instantiate(particleObject, 
-                                        block.gameObject.transform.position, 
-                                        Quaternion.identity);
-            go.GetComponent<ParticleSystemRenderer>().material =
-                block.gameObject.GetComponent<MeshRenderer>().material;
+            GameObject go = Instantiate(particleObject, block.gameObject.transform.position, Quaternion.identity);
+            go.GetComponent<ParticleSystemRenderer>().material = block.gameObject.GetComponent<MeshRenderer>().material;
             if (block.health <= 0)
             {
                 block.DestroyBehaviour();
             }
         }
     }
-
+    
     private void ObjectInteraction(GameObject tempObject)
     {
-        switch (tempObject.tag) 
+        switch (tempObject.tag)
         {
             case "Block":
                 Dig(tempObject.GetComponent<Block>());
@@ -44,12 +46,15 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
-    
-    void Start()
+    void Awake()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         _controller = GetComponent<CharacterController>();
+        _inventoryManager = GameObject.Find("InventoryManager").GetComponent<InventoryManager>();
+
+        _itemParant = GameObject.Find("InventoryContent").transform;
+        _inventoryManager.CreateItem(0, inventoryItems);
     }
 
     private void RotateCharacter()
@@ -82,19 +87,83 @@ public class PlayerController : MonoBehaviour
         velocity.y = _verticalSpeed;
         _controller.Move(velocity * Time.deltaTime);
     }
-    
+
     void Update()
     {
-        RotateCharacter();
-        MoveCharacter();
-        RaycastHit hit;
-        if (Physics.Raycast(_camera.transform.position,
-                    _camera.transform.forward, out hit, 5f))
+        if (canMove)
         {
-            if (Input.GetMouseButton(0))
+            RotateCharacter();
+            MoveCharacter();
+            RaycastHit hit;
+            if (Physics.Raycast(_camera.transform.position,
+                    _camera.transform.forward, out hit, 5f))
             {
-                ObjectInteraction(hit.transform.gameObject);
+                if (Input.GetMouseButton(0))
+                {
+                    ObjectInteraction(hit.transform.gameObject);
+                }
             }
         }
-    }   
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.name.StartsWith("mini"))
+        {
+            _inventoryManager.CreateItem(2, inventoryItems);
+            Destroy(collider.gameObject);
+        }
+    }
+
+    private void OpenInventory()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+        canMove = false;
+        
+        _inventoryManager.inventoryPanel.SetActive(false);
+        if (inventoryItems.Count > 0)
+        {
+            for (int i = 0; i < inventoryItems.Count; i++)
+            {
+                _inventoryManager.InstantiatingItem(inventoryItems[i], _itemParant, _inventoryManager.inventorySlots);
+            }
+        }
+    }
+
+    private void OpenChest()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+        canMove = false;
+
+        if (!_inventoryManager.chestPanel.activeSelf)
+        {
+            _inventoryManager.chestPanel.SetActive(true);
+            Transform itemParent = GameObject.Find("ChestContent").transform;
+            for (int i = 0; i < currentChestItems.Count; i++)
+            {
+                _inventoryManager.InstantiatingItem(currentChestItems[i], itemParent, _inventoryManager.inventorySlots);
+            }
+        }
+    }
+
+    private void CloseInventoryPanel()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        canMove = true;
+        foreach (GameObject slot in _inventoryManager.currentChestSlots) 
+        {
+            Destroy(slot);
+        }
+        foreach (GameObject slot in _inventoryManager.inventorySlots) 
+        {
+            Destroy(slot);
+        }
+        _inventoryManager.currentChestSlots.Clear();
+        _inventoryManager.inventorySlots.Clear();
+        _inventoryManager.inventoryPanel.SetActive(false);
+        _inventoryManager.chestPanel.SetActive(false);
+    }
 }

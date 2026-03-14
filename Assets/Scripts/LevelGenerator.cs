@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
-    [SerializeField] private GameObject groundPref, grassPref;
+    [SerializeField] private GameObject groundPref, grassPref, chestPrefab;
 
     private int _baseHeight = 1,
                 _maxBlockCountY = 10,
@@ -40,6 +40,7 @@ public class LevelGenerator : MonoBehaviour
                     if (y == height - 1)
                     {
                         block = Instantiate(grassPref, new Vector3(x, y, z), Quaternion.identity);
+                        CreateChest(x, height, z);
                     }
                     else
                     {
@@ -50,7 +51,15 @@ public class LevelGenerator : MonoBehaviour
             }
         }
     }
-    
+
+    private void CreateChest(int x, int y, int z)
+    {
+        int createChestChance = Random.Range(0, 100);
+        if (createChestChance > 98)
+        {
+            Instantiate(chestPrefab, new Vector3(x, y, z), Quaternion.identity);
+        }
+    }
     void Start()
     {
         seedX = Random.Range(0, 10);
