@@ -51,11 +51,10 @@ public class LevelGenerator : MonoBehaviour
             }
         }
     }
-
     private void CreateChest(int x, int y, int z)
     {
         int createChestChance = Random.Range(0, 100);
-        if (createChestChance > 98)
+        if (createChestChance > 98 )
         {
             Instantiate(chestPrefab, new Vector3(x, y, z), Quaternion.identity);
         }

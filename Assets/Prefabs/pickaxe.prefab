@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4050925261399619752}
   - component: {fileID: 4592966202102263804}
-  - component: {fileID: 894706481946193412}
   m_Layer: 0
   m_Name: pickaxe
   m_TagString: Untagged
@@ -28,7 +27,6 @@ Transform:
   m_LocalRotation: {x: 0.06426302, y: 0.8783785, z: -0.45725492, w: 0.123448126}
   m_LocalPosition: {x: 0.5, y: -0.25, z: 1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3479016567607151088}
   m_Father: {fileID: 0}
@@ -36,7 +34,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 55, y: 164, z: 0}
 --- !u!95 &4592966202102263804
 Animator:
-  serializedVersion: 5
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -49,28 +47,10 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &894706481946193412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3709866291881910802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2da5e6dd7f7b9c0193cf2dfab5748c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
-  material: 3
-  damageToEnemy: 1
-  damageToBlock: 3
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5688570095567264459
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,7 +79,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4050925261399619752}
   m_RootOrder: 0
@@ -123,7 +102,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

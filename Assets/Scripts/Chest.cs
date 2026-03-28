@@ -5,12 +5,13 @@ using UnityEngine;
 public class Chest : MonoBehaviour
 {
     public List<ItemData> chestItems = new List<ItemData>();
-    void Awake()
+    private void Awake()
     {
-        InventoryManager inventoryManager = GameObject.Find("InventoryManager").GetComponent<InventoryManager>();
+        InventoryManager inventoryManager = 
+            GameObject.Find("InventoryManager").GetComponent<InventoryManager>();
 
-        int itemCounteinChest = Random.Range(3, 7);
-        for (int i = 0; i < itemCounteinChest; i++)
+        int itemCountinChest = Random.Range(3, 7);
+        for (int i = 0; i < itemCountinChest; i++)
         {
             inventoryManager.CreateItem(Random.Range(0, inventoryManager.items.Length), chestItems);
         }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6603705607107752940}
   - component: {fileID: 8953688269732267814}
   - component: {fileID: 7746316339781637699}
-  - component: {fileID: 7746316339781637702}
+  - component: {fileID: 7580931035378531816}
   m_Layer: 0
   m_Name: IronSword
   m_TagString: Untagged
@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7440254975354529523}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.06426302, y: 0.8783785, z: -0.45725492, w: 0.123448126}
   m_LocalPosition: {x: 0.5, y: -0.25, z: 1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 55, y: 164, z: 0}
 --- !u!33 &6603705607107752940
 MeshFilter:
@@ -106,7 +106,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7746316339781637702
+--- !u!114 &7580931035378531816
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

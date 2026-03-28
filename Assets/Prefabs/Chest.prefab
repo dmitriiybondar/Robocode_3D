@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 7346413201358957124}
   - component: {fileID: 5934733271395116513}
   - component: {fileID: 8482704989274394923}
-  - component: {fileID: -6181647202101396811}
+  - component: {fileID: 6769531004725788060}
+  - component: {fileID: 1075517751462878042}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Chest
@@ -29,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.5402184, y: 16.558737, z: 14.267929}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -84,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &-6181647202101396811
+--- !u!65 &6769531004725788060
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,3 +106,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2.0000002, z: 2.0000002}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1075517751462878042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7978235929272643838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3af2f5d42fe01f458ca3d5cc16df4aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chestItems: []

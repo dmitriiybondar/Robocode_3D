@@ -4,10 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Food
-  - Wall
-  - Snake
   - Block
+  - Heart
+  - BedHeart
+  - Chest
   layers:
   - Default
   - TransparentFX

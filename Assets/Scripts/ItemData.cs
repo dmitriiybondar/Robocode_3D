@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class ItemData
-{ 
+public class ItemData 
+{
     public string name;
     public int id, count;
     [Multiline]
@@ -20,4 +20,6 @@ public class ItemData
         this.isUniq = isUniq;
         this.description = description;
     }
+
+    
 }
