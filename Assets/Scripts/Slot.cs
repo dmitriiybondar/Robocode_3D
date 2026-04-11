@@ -18,7 +18,7 @@ public class Slot : MonoBehaviour,
     {
         _tempParentForSlots = GameObject.Find("Canvas").transform;
         _inventoryManager = GameObject.Find("InventoryManager").GetComponent<InventoryManager>();
-        _playerController = GameObject.Find("Player").GetComponent<PlayerController>();
+        _playerController = GameObject.Find("Capsule").GetComponent<PlayerController>();
         _parentName = transform.parent.name;
     }
 
