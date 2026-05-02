@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WheelScript : MonoBehaviour
@@ -8,10 +6,10 @@ public class WheelScript : MonoBehaviour
     [SerializeField] private bool isSteer;
     [SerializeField] private bool isInvertSteer;
     [SerializeField] private bool isPower;
-    private float _steerAngle;
+    private float _streetAngle;
     private float _motorTorque;
     private WheelCollider _wheelCollider;
-    
+
     void Start()
     {
         _wheelCollider = GetComponent<WheelCollider>();
@@ -28,7 +26,7 @@ public class WheelScript : MonoBehaviour
     {
         if (isSteer)
         {
-            _wheelCollider.steerAngle = _steerAngle * (isInvertSteer ? -1 : 1);
+            _wheelCollider.steerAngle = _streetAngle * (isInvertSteer ? -1 : 1);
         }
 
         if (isPower)
@@ -36,7 +34,7 @@ public class WheelScript : MonoBehaviour
             _wheelCollider.motorTorque = _motorTorque;
         }
     }
-    
+
     public void ChangeMotorTorque(float torque)
     {
         _motorTorque = torque;
@@ -44,6 +42,6 @@ public class WheelScript : MonoBehaviour
 
     public void ChangeSteerAngle(float angle)
     {
-        _steerAngle = angle;
+        _streetAngle = angle;
     }
 }
