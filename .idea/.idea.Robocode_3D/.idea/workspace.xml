@@ -6,20 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f7e26bae-785c-4a79-be57-4a72b11aac3b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Robocode_3D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Robocode_3D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Car2_2.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Car2_2.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/MapRoad.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MapRoad.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/MapRoad.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MapRoad.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/pallet.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/pallet.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/pallet.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/pallet.jpg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WheelScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WheelScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WheelScript.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WheelScript.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +18,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Coins.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -130,6 +120,7 @@
       <workItem from="1765633166432" duration="6841000" />
       <workItem from="1776520144116" duration="3527000" />
       <workItem from="1777731342225" duration="1490000" />
+      <workItem from="1778333867487" duration="3696000" />
     </task>
     <servers />
   </component>
