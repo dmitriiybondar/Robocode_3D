@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
+    [SerializeField] private int coins;
     [SerializeField] private Text lapText;
     [SerializeField] private int maxLap;
     private int _currentLap;
@@ -53,6 +54,11 @@ public class PlayerManager : MonoBehaviour
             {
                 _currentCheckPoint++;
             }
+        } 
+        else if (other.gameObject.CompareTag("Coin"))
+        {
+            coins += other.GetComponent<Coin>().GetPrice();
+            other.GetComponent<Coin>().PickUp();
         }
     }
 }
