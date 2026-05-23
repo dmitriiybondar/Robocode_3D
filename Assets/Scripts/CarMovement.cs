@@ -1,30 +1,42 @@
-using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class CarMovement : MonoBehaviour
 {
-    [SerializeField] Transform centerMass;
+    [SerializeField] private Transform centerMass;
     [SerializeField] private float motorTorque;
     [SerializeField] private float maxSteer;
-    private float _horizontal;
-    private float _vertical;
-    private Rigidbody _rb;
-    [SerializeField] private WheelScript[] wheels;
+    private float horizontal, vertical;
+    private Rigidbody rb;
+    [SerializeField] private Wheel[] wheels; // ����� ���� Wheel
 
-    private void Start()
+    private float timeToStart = 3f;
+    private bool keyStart = false;
+
+    private GameObject startPanel;
+    void Start()
     {
-        _rb = GetComponent<Rigidbody>();
-        _rb.centerOfMass = centerMass.localPosition;
+        rb = GetComponent<Rigidbody>();
+        rb.centerOfMass = centerMass.localPosition;
+        wheels = GetComponentsInChildren<Wheel>();
     }
 
-    private void Update()
+    void Update()
     {
-        _horizontal = Input.GetAxis("Horizontal");
-        _vertical = Input.GetAxis("Vertical") * -1;
-        foreach (WheelScript wheel in wheels)
+        Control();
+    }
+
+    private void Control()
+    {
+
+            horizontal = Input.GetAxis("Horizontal");
+            vertical = Input.GetAxis("Vertical");
+
+        foreach (Wheel wheel in wheels)
         {
-            wheel.ChangeSteerAngle(_horizontal *  motorTorque);
-            wheel.ChangeMotorTorque(_vertical *  motorTorque);
+            wheel.ChangeMotorTorque(vertical * motorTorque);
+            wheel.ChangeSteerAngle(horizontal * maxSteer);
         }
     }
 }
